@@ -1,6 +1,9 @@
 let seconds = 0;
 let intervalId;
 
+
+// Start Watch //
+
 function startTimer() {
   intervalId = setInterval(() => {
     seconds++;
@@ -9,9 +12,12 @@ function startTimer() {
   }, 1000);
 }
 
+// stop Watch //
+
 function stopTimer() {
   clearInterval(intervalId);
 }
+// Reset Watch //
 
 function resetTimer() {
   seconds = 0;
@@ -25,6 +31,8 @@ function formatTime(seconds) {
   const secs = Math.floor(seconds % 60);
   return `${secs.toString().padStart(2, '0')}`;
 }
+
+// Button //
 
 document.getElementById('start').addEventListener('click', startTimer);
 document.getElementById('stop').addEventListener('click', stopTimer);
